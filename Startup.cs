@@ -12,6 +12,7 @@ using supermarket_api.Domain.Repositories;
 using supermarket_api.Persistence.Contexts;
 using supermarket_api.Services;
 using supermarket_api.Persistence.Repositories;
+using AutoMapper;
 
 namespace supermarket_api
 {
@@ -27,6 +28,7 @@ namespace supermarket_api
         public void ConfigureServices(IServiceCollection services)
         {
             services.AddMvc().SetCompatibilityVersion(CompatibilityVersion.Version_2_2);
+            services.AddAutoMapper(typeof(Startup));
 
             services.AddDbContext<AppDbContext>(options => {
                 options.UseInMemoryDatabase("supermarket-api-in-memory");
