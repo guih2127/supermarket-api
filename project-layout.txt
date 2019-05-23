@@ -1,28 +1,39 @@
--> Controllers - Gerenciam as requisições que serão feitas para a API. Nos controllers, utilizamos da injeção de
-dependências para utilizar as tarefas que definimos em nossos Services. No caso de um GET, o próprio framework serializa
-os dados para um formato JSON.
+Os Controllers controlam as requisições feitas para a API.
 
--> Services - Os services dentro da camada principal são classes que implementam as interfaces dos Services da camada
-de domínio. As implementações (lógica de negócio) são colocadas exatamente nessas classes, porém, a camada de serviços não
-deve acessar o banco de dados. Quem deve fazer isso são as classes de repositório e, por isso, nossos services devem conversar
-com elas. Por isso, ao criarmos nossos services, eles iram, a partir da injeção de dependências, ter acesso à um ou mais
-repositórios.
+No Domain, temos as pastas Models, Repositories e Services. As Models
+são as classes que definem entidades no nosso banco de dados. Os repositórios
+e serviços, aqui, são interfaces que dizem como devem ser os metódos de serviço
+e de repositório. Eles não possuem a lógica em si.
 
--> Services - Os services da camada de domínio são Interfaces. para definirmos o comportamento esperado para algo no C#, 
-criamos uma interface. A interface diz como algo deve funcionar, mas não implementa a lógica real para o comportamento. 
-Essa lógica é implementada em classes que implementam a interface criada. Nos nossos services, definimos Tasks, que serão 
-executadas de forma assíncrona (por isso utilizamos async e await).
+A pasta Extensions contém extensões de outras classes e aqui implementamos novos
+metódos para as classes que desejamos extender.
 
--> Models - Classes que representam entidades no banco de dados. Possui também Enums.
+A pasta Mapping contém classes que são responsáveis pela conversão das Models para
+os Resources (no caso de um GET, por exemplo), ou dos Resources para as Models
+(no caso de um POST, por exemplo). Aqui utilizamos o AutoMapper.
 
--> Repository - As classes de repositório são utilizadas para manusear dados do banco de dados. Essas classes encapsulam o
-acesso ao banco e também a lógica para lidar com os dados. Esses repositórios possuem metódos para listar, criar, editar e
-deletar objetos de um determinado modelo. Basicamente, esses metódos isolam o banco de dados do resto da aplicação. 
-No que diz respeito ao banco de dados, temos também a pasta Persistence, que contem nossa classe de contexto (AppDbContext),
-onde passamos a configuração do banco de dados para a classe base através de injeção de dependência. Lá criamos também 
-as propriedades DbSet, cada uma delas equivalendo à uma entidade (model) diferente. Essas propriedades mapeiam as models com
-as tabelas do banco de dados. Definimos aqui propriedades como not null, auto increment, max length, etc, que são mapeadas
-na hora da criação do banco de dados (code first). Definimos também os relacionamentos.
-Criamos um BaseRepository aqui, que é apenas uma classe abstrata da qual todos os outros repositories irão derivar. Criamos
-ela como abstrata pois nenhuma outra classe poderá instanciá-la. Essa classe recebe uma instância da classe AppDbContext,
-que dará acesso à todos os metódos que precisamos para fazer operações com o banco de dados.
+A pasta Persistence contém a pasta Repositories e Contexts. A pasta Contexts contém
+nossas classes de contexto, que definem a nossa configuração do banco de dados. Como 
+utilizamos o Code First, nós definimos como o banco será gerado a partir das nossas
+models.
+A pasta Repositories, por sua vez, contém nossos arquivos de repositório, ou seja, classes
+responsáveis pela comunicação com o banco de dados. Aqui implementamos o que definimos
+na Interface de repositório, anteriormente.
+Temos também aqui uma interface chamado IUnitOfWork, que define metódos para começar, completar
+ou abortar transações. Fazemos isso pois chamar saveChanges() diretamente no repositório 
+nos diferentes metódos pode nos trazer problemas.
+
+A pasta Resources contém nossas classes de Resources, ou seja, classes que serão
+utilizadas para os EndPoints da nossa API. Não queremos utilizar nossas Models diretamente
+nas requisições, pois nem sempre queremos trabalhar com todos os dados daquela model, por
+questões de segurança e etc.
+
+A pasta Services contém nossas classes de Serviço, ou seja, classes que irão englobar a
+lógica de negócios da nossa API. A lógica dos metódos que nos definimos na interface de serviço
+do domínio serão definidas aqui.
+
+A pasta Communication contén classes que são utilizadas para definir como serão as respostas
+para as nossas requisições. Por exemplo, um POST, em caso de sucesso, retornará o objeto 
+salvo no banco de dados e um status 200 OK. Retornaremos essas informações a partir dessas classes.
+
+Caminho 'Base' = Controller -> Service -> Repository

@@ -8,6 +8,6 @@ namespace supermarket_api.Domain.Services
     public interface ICategoryService
     {
          Task<IEnumerable<Category>> ListAsync();
-         Task<SaveCategoryResponse> SaveAsync(Category category)
+         Task<SaveCategoryResponse> SaveAsync(Category category);
     }
 }
