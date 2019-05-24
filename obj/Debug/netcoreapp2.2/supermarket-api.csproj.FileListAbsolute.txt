@@ -12,3 +12,17 @@ C:\Users\ConsuTI-DEV\other-projects\supermarket\supermarket-api\obj\Debug\netcor
 C:\Users\ConsuTI-DEV\other-projects\supermarket\supermarket-api\obj\Debug\netcoreapp2.2\supermarket-api.RazorTargetAssemblyInfo.cache
 C:\Users\ConsuTI-DEV\other-projects\supermarket\supermarket-api\obj\Debug\netcoreapp2.2\supermarket-api.dll
 C:\Users\ConsuTI-DEV\other-projects\supermarket\supermarket-api\obj\Debug\netcoreapp2.2\supermarket-api.pdb
+C:\Users\guih2\source\repos\supermarket-api\obj\Debug\netcoreapp2.2\supermarket-api.csprojAssemblyReference.cache
+C:\Users\guih2\source\repos\supermarket-api\obj\Debug\netcoreapp2.2\supermarket-api.csproj.CoreCompileInputs.cache
+C:\Users\guih2\source\repos\supermarket-api\obj\Debug\netcoreapp2.2\supermarket-api.RazorAssemblyInfo.cache
+C:\Users\guih2\source\repos\supermarket-api\obj\Debug\netcoreapp2.2\supermarket-api.RazorAssemblyInfo.cs
+C:\Users\guih2\source\repos\supermarket-api\obj\Debug\netcoreapp2.2\supermarket-api.AssemblyInfoInputs.cache
+C:\Users\guih2\source\repos\supermarket-api\obj\Debug\netcoreapp2.2\supermarket-api.AssemblyInfo.cs
+C:\Users\guih2\source\repos\supermarket-api\obj\Debug\netcoreapp2.2\supermarket-api.dll
+C:\Users\guih2\source\repos\supermarket-api\obj\Debug\netcoreapp2.2\supermarket-api.pdb
+C:\Users\guih2\source\repos\supermarket-api\bin\Debug\netcoreapp2.2\supermarket-api.deps.json
+C:\Users\guih2\source\repos\supermarket-api\bin\Debug\netcoreapp2.2\supermarket-api.runtimeconfig.json
+C:\Users\guih2\source\repos\supermarket-api\bin\Debug\netcoreapp2.2\supermarket-api.runtimeconfig.dev.json
+C:\Users\guih2\source\repos\supermarket-api\bin\Debug\netcoreapp2.2\supermarket-api.dll
+C:\Users\guih2\source\repos\supermarket-api\bin\Debug\netcoreapp2.2\supermarket-api.pdb
+C:\Users\guih2\source\repos\supermarket-api\obj\Debug\netcoreapp2.2\supermarket-api.RazorTargetAssemblyInfo.cache
